@@ -1,0 +1,31 @@
+user create:
+
+{
+"transaction_time":"2019-07-31T22:57:56.692",
+"data":{
+"account":"CreateTest02",
+"password":"CreateTest02",
+"status":"REGISTERED",
+"email":"CreateTest02@GMAIL.COM",
+"phone_number":"010-1234-5678"
+}
+}
+
+
+
+item create:
+
+{
+"transaction_time": "2021-12-29T20:44:16.47249",
+"result_code": "OK",
+"description": "OK",
+"data":{
+"status": "REGISTERED",
+"name": "전자노트북 S10",
+"title": "전자노트북",
+"content": "2021년 겨울 한정판 판매",
+"price": 998000,
+"brand_name": "전자가전",
+"partner_id": 1
+}
+}
