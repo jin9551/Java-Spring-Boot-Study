@@ -1,51 +1,43 @@
 package com.example.study2.demo.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import lombok.*;
+
+import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
-
+@NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
+@Data
 public class Person {
+
     @Id
     @GeneratedValue
     private Long id;
 
+    @NonNull
     private String name;
 
+    @NonNull
     private int age;
 
+    private String hobby;
 
-    public Long getId() {
-        return id;
-    }
+    @NonNull
+    private String bloodType;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private String address;
 
-    public String getName() {
-        return name;
-    }
+    private LocalDate birthday;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    private String job;
 
-    public int getAge() {
-        return age;
-    }
+    @ToString.Exclude //필드에 따로 선언하는게 클래스 상단에 선언하는 것보다 좋다.
+    private String phoneNumber;
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    private Block block;
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
 }
